@@ -24,8 +24,11 @@ $result = $controller->getEmployees();
                 <td><?php echo $row["lname"] ?></td>
                 <td><?php echo number_format($row["salary"]); ?></td>
                 <td><?php echo $row["department_name"] ?></td>
-                <td><a onclick="return confirm('คุณต้องการลบข้อมูลหรือไม่ ?')"
-                        href="delete.php?id=<?php echo $row['emp_id']; ?>" class="btn btn-danger">ลบข้อมูล</a></td>
+                <td>
+                    <a href="editForm.php?id=<?php echo $row['emp_id']; ?>" class="btn btn-warning">แก้ไขข้อมูล</a>
+                    <a onclick="return confirm('คุณต้องการลบข้อมูลหรือไม่ ?')"
+                        href="delete.php?id=<?php echo $row['emp_id']; ?>" class="btn btn-danger">ลบข้อมูล</a>
+                </td>
             </tr>
         <?php  } ?>
 

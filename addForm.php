@@ -26,15 +26,15 @@ if (isset($_POST["submit"])) {
 <form method="POST" action="addForm.php">
     <div class="form-group">
         <label for="fname">ชื่อ</label>
-        <input type="text" name="fname" class="form-control">
+        <input type="text" name="fname" class="form-control" required>
     </div>
     <div class="form-group">
         <label for="lname">นามสกุล</label>
-        <input type="text" name="lname" class="form-control">
+        <input type="text" name="lname" class="form-control" required>
     </div>
     <div class="form-group">
         <label for="salary">เงินเดือน</label>
-        <input type="text" name="salary" class="form-control">
+        <input type="text" name="salary" class="form-control" required>
     </div>
     <div class="form-group">
         <label for="department">แผนก</label>
