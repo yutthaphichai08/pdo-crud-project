@@ -51,4 +51,17 @@ class Controller
             return false;
         }
     }
+    function deleteEmployee($id)
+    {
+        try {
+            $sql = "DELETE FROM employees WHERE emp_id =:id";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindParam(":id", $id);
+            $stmt->execute();
+            return true;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            return false;
+        }
+    }
 }

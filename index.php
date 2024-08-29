@@ -14,6 +14,7 @@ $result = $controller->getEmployees();
             <th scope="col">นามสกุล</th>
             <th scope="col">เงินเดือน</th>
             <th scope="col">แผนก</th>
+            <th scope="col">ดำเนินการ</th>
         </tr>
     </thead>
     <tbody>
@@ -21,10 +22,12 @@ $result = $controller->getEmployees();
             <tr>
                 <th scope="row"><?php echo $row["fname"] ?></th>
                 <td><?php echo $row["lname"] ?></td>
-                <td><?php echo $row["salary"] ?></td>
+                <td><?php echo number_format($row["salary"]); ?></td>
                 <td><?php echo $row["department_name"] ?></td>
+                <td><a onclick="return confirm('คุณต้องการลบข้อมูลหรือไม่ ?')"
+                        href="delete.php?id=<?php echo $row['emp_id']; ?>" class="btn btn-danger">ลบข้อมูล</a></td>
             </tr>
-        <?php   } ?>
+        <?php  } ?>
 
     </tbody>
 </table>
